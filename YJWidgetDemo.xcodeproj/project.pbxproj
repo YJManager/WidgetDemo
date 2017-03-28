@@ -71,6 +71,8 @@
 		6391F4121E8A025900A531EB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6391F41C1E8A2BA000A531EB /* UIView+YJSuperExt.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+YJSuperExt.h"; sourceTree = "<group>"; };
 		6391F41D1E8A2BA000A531EB /* UIView+YJSuperExt.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+YJSuperExt.m"; sourceTree = "<group>"; };
+		6391F4211E8A384E00A531EB /* YJWidgetDemo.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = YJWidgetDemo.entitlements; sourceTree = "<group>"; };
+		6391F4221E8A38B300A531EB /* WidgetTarget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WidgetTarget.entitlements; sourceTree = "<group>"; };
 		6FC51733B7ABF25C7B791DFC /* Pods-YJWidgetDemo.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YJWidgetDemo.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YJWidgetDemo/Pods-YJWidgetDemo.debug.xcconfig"; sourceTree = "<group>"; };
 		EC027C8088059AD346F30EE5 /* Pods-WidgetTarget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WidgetTarget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WidgetTarget/Pods-WidgetTarget.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -119,6 +121,7 @@
 		6391F3EC1E8A005C00A531EB /* YJWidgetDemo */ = {
 			isa = PBXGroup;
 			children = (
+				6391F4211E8A384E00A531EB /* YJWidgetDemo.entitlements */,
 				6391F41B1E8A2B8900A531EB /* Categories */,
 				6391F3F01E8A005C00A531EB /* AppDelegate.h */,
 				6391F3F11E8A005C00A531EB /* AppDelegate.m */,
@@ -144,6 +147,7 @@
 		6391F40B1E8A025900A531EB /* WidgetTarget */ = {
 			isa = PBXGroup;
 			children = (
+				6391F4221E8A38B300A531EB /* WidgetTarget.entitlements */,
 				6391F40C1E8A025900A531EB /* TodayViewController.h */,
 				6391F40D1E8A025900A531EB /* TodayViewController.m */,
 				6391F40F1E8A025900A531EB /* MainInterface.storyboard */,
@@ -239,11 +243,21 @@
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 33JZ8ZWGJN;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 					6391F4071E8A025900A531EB = {
 						CreatedOnToolsVersion = 8.0;
 						DevelopmentTeam = 33JZ8ZWGJN;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -427,6 +441,7 @@
 /* Begin XCBuildConfiguration section */
 		6391F3FF1E8A005C00A531EB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EC027C8088059AD346F30EE5 /* Pods-WidgetTarget.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -474,6 +489,7 @@
 		};
 		6391F4001E8A005C00A531EB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 35DF6383C9D92C98A809F666 /* Pods-WidgetTarget.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -518,6 +534,7 @@
 			baseConfigurationReference = 6FC51733B7ABF25C7B791DFC /* Pods-YJWidgetDemo.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YJWidgetDemo/YJWidgetDemo.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 33JZ8ZWGJN;
 				INFOPLIST_FILE = YJWidgetDemo/Info.plist;
@@ -533,6 +550,7 @@
 			baseConfigurationReference = 3F0D179049B3BB22D31858D1 /* Pods-YJWidgetDemo.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = YJWidgetDemo/YJWidgetDemo.entitlements;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = 33JZ8ZWGJN;
 				INFOPLIST_FILE = YJWidgetDemo/Info.plist;
@@ -547,6 +565,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = EC027C8088059AD346F30EE5 /* Pods-WidgetTarget.debug.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WidgetTarget/WidgetTarget.entitlements;
 				DEVELOPMENT_TEAM = 33JZ8ZWGJN;
 				INFOPLIST_FILE = WidgetTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
@@ -561,6 +580,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 35DF6383C9D92C98A809F666 /* Pods-WidgetTarget.release.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = WidgetTarget/WidgetTarget.entitlements;
 				DEVELOPMENT_TEAM = 33JZ8ZWGJN;
 				INFOPLIST_FILE = WidgetTarget/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;

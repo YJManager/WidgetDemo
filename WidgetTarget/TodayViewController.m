@@ -67,7 +67,7 @@
         _openBtn= [UIButton buttonWithType:UIButtonTypeCustom];
         _openBtn.backgroundColor = [UIColor orangeColor];
         [_openBtn setTitle:@"打开" forState:UIControlStateNormal];
-        [_openBtn setTitle:@"打开" forState:UIControlStateHighlighted];
+        [_openBtn setTitle:@"高亮" forState:UIControlStateHighlighted];
         [_openBtn setTitleColor:[UIColor redColor] forState:UIControlStateNormal];
         [_openBtn setTitleColor:[UIColor redColor] forState:UIControlStateHighlighted];
         [_openBtn addTarget:self action:@selector(openWidgitClickAction:) forControlEvents:UIControlEventTouchUpInside];
@@ -77,7 +77,10 @@
 }
 
 - (void)openWidgitClickAction:(UIButton *)btn{
-
+    
+    [self.extensionContext openURL:[NSURL URLWithString:@"houmanager://action=name:houmanageremail:houmanager@hotmail.com"] completionHandler:^(BOOL success) {
+        NSLog(@"-->%@", @"+++");
+    }];
 }
 
 - (void)didReceiveMemoryWarning {
