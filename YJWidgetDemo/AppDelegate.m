@@ -36,6 +36,22 @@
 }
 
 
+- (void)application:(UIApplication *)application performActionForShortcutItem:(UIApplicationShortcutItem *)shortcutItem completionHandler:(void(^)(BOOL succeeded))completionHandler {
+    
+    if([shortcutItem.localizedTitle isEqualToString:@"扫一扫"]){
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:shortcutItem.localizedTitle delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"other", nil];
+        [alert show];
+    } else if ([shortcutItem.localizedTitle isEqual: @"一键打卡"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:shortcutItem.localizedTitle delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"other", nil];
+        [alert show];
+    } else if ([shortcutItem.localizedTitle isEqual: @"频道"]) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"" message:shortcutItem.localizedTitle delegate:nil cancelButtonTitle:@"cancel" otherButtonTitles:@"other", nil];
+        [alert show];
+    }
+}
+
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
